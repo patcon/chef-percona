@@ -10,16 +10,18 @@ driver_config:
   availability_zone: us-east-1d
   require_chef_omnibus: <%= ENV['CHEF_VERSION'] ? ENV['CHEF_VERSION'] : 'latest' %>
 
+<% job_suffix = ENV['TRAVIS_JOB_NUMBER'] ? "-#{ENV['TRAVIS_JOB_NUMBER']}" : '' -%>
+
 platforms:
 # Source: http://cloud-images.ubuntu.com/locator/ec2/
-- name: lucid64
+- name: lucid64<%= job_suffix %>
   driver_config:
     image_id: ami-b70374de
     username: ubuntu
   run_list:
   - recipe[apt]
 
-- name: precise64
+- name: precise64<%= job_suffix %>
   driver_config:
     image_id: ami-e7582d8e
     username: ubuntu
@@ -27,7 +29,7 @@ platforms:
   - recipe[apt]
 
 # Source: http://www.bashton.com/blog/2013/centos-6-4-ami-available/
-- name: centos64-64
+- name: centos64-64<%= job_suffix %>
   driver_config:
     image_id: ami-52009e3b
     username: ec2-user
