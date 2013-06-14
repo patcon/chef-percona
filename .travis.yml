@@ -11,6 +11,7 @@ gemfile:
 
 env:
   global:
+  - rvm_verify_downloads_flag=1
   # AWS_ACCESS_KEY_ID
   - secure: "FI7nEQHyd0YG0NJTQ1ENLEnFAOZRPetmd5FbOOp9WYNdTbbTkWzYXHWHdTxg\nlLdnCeqtArDb+UJvnnS+jWamBULZqNktz0qYdSGs4JVgFa8VsU7j/k172EF9\ngaBOWZ8H/Pin1pFccDHjy5dFXBLcB5k0awM+LDlhbZdlQgD9+qo="
   # AWS_SECRET_ACCESS_KEY
