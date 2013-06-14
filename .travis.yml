@@ -25,7 +25,7 @@ env:
 script:
 - bundle exec rake knife
 - bundle exec rake foodcritic
-- bundle exec kitchen test default --parallel --destroy=always
+- bundle exec kitchen test all --parallel --destroy=always
 
 after_failure:
   - cat .kitchen/logs/*.log
