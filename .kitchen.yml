@@ -14,13 +14,6 @@ driver_config:
 
 platforms:
 # Source: http://cloud-images.ubuntu.com/locator/ec2/
-- name: ubuntu1004-64<%= job_suffix %>
-  driver_config:
-    image_id: ami-b70374de
-    username: ubuntu
-  run_list:
-  - recipe[apt]
-
 - name: ubuntu1204-64<%= job_suffix %>
   driver_config:
     image_id: ami-e7582d8e

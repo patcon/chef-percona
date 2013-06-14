@@ -25,7 +25,7 @@ env:
 script:
 - bundle exec rake knife
 - bundle exec rake foodcritic
-- bundle exec kitchen test ubuntu1004 --parallel --destroy=always
+- bundle exec kitchen test --parallel --destroy=always
 
 branches:
   only:
