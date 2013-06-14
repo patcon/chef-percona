@@ -21,7 +21,7 @@ env:
 script:
 - bundle exec rake knife
 - bundle exec rake foodcritic
-- bundle exec kitchen test lucid --parallel --destroy=always
+- bundle exec kitchen test centos --parallel --destroy=always
 
 branches:
   only:
