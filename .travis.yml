@@ -2,7 +2,7 @@
 language: ruby
 
 rvm:
-  - 1.9.3-p429
+  - 1.9.3
 
 gemfile:
   - test/support/Gemfile
@@ -12,10 +12,6 @@ env:
     - CHEF_VERSION=10.26.0
     - CHEF_VERSION=11.4.4
   global:
-    #  Override RVM's default to DISABLE verifying 1.9.3-p429 checksum,
-    #  since Travis' RVM is out-of-date.
-    - rvm_verify_downloads_flag=1
-
     # AWS_ACCESS_KEY_ID
     - secure: "FI7nEQHyd0YG0NJTQ1ENLEnFAOZRPetmd5FbOOp9WYNdTbbTkWzYXHWHdTxg\nlLdnCeqtArDb+UJvnnS+jWamBULZqNktz0qYdSGs4JVgFa8VsU7j/k172EF9\ngaBOWZ8H/Pin1pFccDHjy5dFXBLcB5k0awM+LDlhbZdlQgD9+qo="
 
