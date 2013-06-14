@@ -27,6 +27,9 @@ script:
 - bundle exec rake foodcritic
 - bundle exec kitchen test --parallel --destroy=always
 
+after_failure:
+  - cat .kitchen/logs/*.log
+
 branches:
   only:
     - develop
