@@ -18,23 +18,15 @@ platforms:
   driver_config:
     image_id: ami-e7582d8e
     username: ubuntu
-  run_list:
-  - recipe[apt]
 
 # Source: http://www.bashton.com/blog/2013/centos-6-4-ami-available/
 - name: centos64-64<%= job_suffix %>
   driver_config:
     image_id: ami-52009e3b
     username: ec2-user
-  run_list:
-  - recipe[yum]
 
-suites:
-- name: client
+- name: default
   run_list:
   - recipe[percona::client]
-  attributes: {}
-- name: server
-  run_list:
   - recipe[percona::server]
   attributes: {}
