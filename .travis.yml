@@ -2,9 +2,7 @@
 language: ruby
 
 rvm:
-# Use the version from the Chef Omnibus installer:
-# https://github.com/opscode/omnibus-software/blob/master/config/software/ruby.rb#L19
-- 1.9.3-p429
+- 1.9.3
 
 gemfile:
 - test/support/Gemfile
