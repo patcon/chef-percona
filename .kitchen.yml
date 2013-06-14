@@ -9,10 +9,6 @@ driver_config:
   ssh_key: <%= File.expand_path('./test/support/keys/vagrant') %>
   availability_zone: us-east-1d
   require_chef_omnibus: <%= ENV['CHEF_VERSION'] ? ENV['CHEF_VERSION'] : 'latest' %>
-  attributes:
-    yum:
-      epel:
-        baseurl: http://dl.fedoraproject.org/pub/epel/$releasever/$basearch/
 
 <% job_suffix = ENV['TRAVIS_JOB_NUMBER'] ? "-#{ENV['TRAVIS_JOB_NUMBER']}" : '' %>
 
@@ -31,7 +27,7 @@ platforms:
     image_id: ami-52009e3b
     username: ec2-user
   run_list:
-  - recipe[yum::epel]
+  - recipe[yum]
 
 suites:
 - name: client
