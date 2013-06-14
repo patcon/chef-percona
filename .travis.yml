@@ -5,7 +5,7 @@ rvm:
   - 1.9.3-p429
 
 gemfile:
-- test/support/Gemfile
+  - test/support/Gemfile
 
 env:
   matrix:
@@ -23,13 +23,14 @@ env:
     - secure: "hKI4e2WqXmNpiabTCN1bBB00w3HEaR3khOnp5YKuSJCO0zsyhJMdTI9X9ynB\ncvQvddI8lWbkfTvsEGed+QBummzGHJ34Gao/cYCxWnoMpGmFtBhk60/du/ep\nLYWGnCbbFq9L6i6Or1Q2649q/OjYUgJd3C8/WjI0S6K5Qzyv/XQ="
 
 script:
-- bundle exec rake knife
-- bundle exec rake foodcritic
-- bundle exec kitchen test --parallel --destroy=always
+  - curl -L https://www.opscode.com/chef/install.sh | sudo bash
+  - rake knife
+  - rake foodcritic
+  - bundle exec kitchen test --parallel --destroy=always
 
 branches:
   only:
-  - develop
+    - develop
 
 notifications:
   email: false

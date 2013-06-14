@@ -10,7 +10,7 @@ driver_config:
   availability_zone: us-east-1d
   require_chef_omnibus: <%= ENV['CHEF_VERSION'] ? ENV['CHEF_VERSION'] : 'latest' %>
 
-<% job_suffix = ENV['TRAVIS_JOB_NUMBER'] ? "-#{ENV['TRAVIS_JOB_NUMBER']}" : '' -%>
+<% job_suffix = ENV['TRAVIS_JOB_NUMBER'] ? "-#{ENV['TRAVIS_JOB_NUMBER']}" : '' %>
 
 platforms:
 # Source: http://cloud-images.ubuntu.com/locator/ec2/
